@@ -11,7 +11,7 @@ const productSchema = mongoose.Schema(
       type: Number,
       required: [ true,"Please complete this field" ]
     },
-    precio : {
+    price : {
       type: Number,
       required: [ true,"Please complete this field" ]
     }

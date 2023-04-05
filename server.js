@@ -15,12 +15,6 @@ app.get("/hello", (req, res) => {
 const PORT = process.env.PORT;
 const MONGO_URI = process.env.MONGO_URI;
 
-// app.listen(() => {
-//   connectDB(MONGO_URI);
-//   console.log(`MongoDB connected!!`);
-//   console.log(`Server running http://localhost:${PORT}`);
-// })
-
 const start = async () => {
   try {
     await connectDB(MONGO_URI);

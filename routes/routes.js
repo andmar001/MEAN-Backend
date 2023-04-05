@@ -1,5 +1,5 @@
 import express from 'express';
-import { getProducts, getProduct,createProduct,updateProduct, deleteProduct } from '../controllers/ProductController.js';
+import { getProducts, getProduct,createProduct,updateProduct, deleteProduct, createProducts } from '../controllers/ProductController.js';
 
 const router = express.Router()
 
@@ -13,5 +13,8 @@ const router = express.Router()
 // forma 2 de definir las rutas - agrupando las rutas
 router.route('/').get(getProducts).post(createProduct)
 router.route('/:id').get(getProduct).put(updateProduct).delete(deleteProduct)
+
+//para crear productos de forma random
+router.post('/random', createProducts)
 
 export default router

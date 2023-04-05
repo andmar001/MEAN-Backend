@@ -66,3 +66,31 @@ export const deleteProduct = async (req, res) => {
     res.status(500).json({ message: error.message })
   }
 }
+
+
+// * region crear productos random
+export function crearRandomProducts(sizeArray){
+  const products = []
+  for (let i = 0; i < sizeArray; i++) {
+    const product = {
+      description: `Description ${i}`,
+      price: Math.floor(Math.random() * 190),
+      stock: Math.floor(Math.random() * 56),
+    }
+    products.push(product)
+  }
+  return products
+}
+
+export const createProducts = async (req, res) => {
+  try{
+    const products = crearRandomProducts(50)
+    const product = await ProductModel.insertMany(products)
+
+    res.status(201).json(product)
+  }
+  catch(error){
+    res.status(500).json({ message: 'An error has ocursred' })
+  }
+}
+// * endregion

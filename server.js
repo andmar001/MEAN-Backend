@@ -14,6 +14,12 @@ app.use(express.json());
 // ?ruta principal para endpoints
 app.use("/api/products", router);
 
+// ?Middleware de prueba- se ejecuta en cada request
+// app.use((req, res, next) =>{
+//   console.log("Middleware de prueba")
+//   next()
+// })
+
 app.get("/hello", (req, res) => {
   res.send("Hello World!");
 });

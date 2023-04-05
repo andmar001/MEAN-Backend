@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 // creamos un schema para el modelo
 const productSchema = mongoose.Schema(
   {
-    descripcion : {
+    description : {
       type: String,
       required: [ true,"Please complete this field" ]
     },
